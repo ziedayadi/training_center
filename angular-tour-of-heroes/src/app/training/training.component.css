@@ -1,0 +1,56 @@
+#trainings {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.clickable{
+  cursor:pointer;
+}
+
+
+#trainings td, #trainings th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#trainings tr:nth-child(even){background-color: #f2f2f2;}
+
+#trainings tr:hover {background-color: #ddd;}
+
+#trainings th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ADD8E6;
+  color: white;
+}
+
+.trainig-container{
+  margin: 20px;
+}
+
+.save{
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+
+}
+
+.new-train-form{
+  width: 40%;
+}
+
+.new-train-button{
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.search-container{
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+.panel-title{
+  width: 50%;
+}

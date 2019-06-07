@@ -1,0 +1,115 @@
+<div class="container">
+  <button class="btn btn-primary detail-button" (click)="back()">Back</button>
+</div>
+<div class="container"  *ngIf="training" >
+  <div class="left">
+    <div class="form-group">
+      <form>
+        <button  *ngIf="!isEditing" class="btn btn-primary detail-button" (click)="onEdit()">Edit</button>
+        <button *ngIf="isEditing" class="btn btn-primary detail-button" (click)="onCancel()">Cancel</button>
+        <button class="btn btn-danger detail-button" (click)="onDelete()">Remove</button>
+
+      </form>
+    </div>
+    <div class="training-detail-table">
+      <h3>Training details</h3>
+      <table class="table table-striped table-bordered ">
+        <tr>
+          <td>
+            <div>
+              Id
+            </div>
+          </td>
+          <td>
+            <div>
+              {{training.id}}
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              Name
+            </div>
+          </td>
+          <td>
+            <div>
+              <input [(ngModel)]="this.training.name" [disabled]="!isEditing" class="training-detail-input form-control"
+                     type="">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              Reference
+            </div>
+          </td>
+          <td>
+            <div>
+              <input [(ngModel)]="this.training.reference" [disabled]="!isEditing"
+                     class="training-detail-input form-control">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              Description
+            </div>
+          </td>
+          <td>
+            <div>
+              <input [(ngModel)]="this.training.description" [disabled]="!isEditing"
+                     class="training-detail-input form-control"
+                     type="textarea">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              Prerequisites
+            </div>
+          </td>
+          <td>
+            <div>
+              <input [(ngModel)]="this.training.prerequisites" [disabled]="!isEditing"
+                     class="training-detail-input form-control">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              Period
+            </div>
+          </td>
+          <td>
+            <div>
+              <input [(ngModel)]="this.training.period" [disabled]="!isEditing"
+                     class="training-detail-input form-control">
+            </div>
+          </td>
+        </tr>
+      </table>
+      <button *ngIf="isEditing" (click)="save()" class="btn btn-primary save-btn">Save</button>
+    </div>
+  </div>
+  <div *ngIf="training.sessions">
+    <div class="right container">
+      <h3>Sessions</h3>
+      <button *ngIf="isEditing" class="btn btn-primary save-btn" (click)="onAddSession()">Add Session</button>
+      <div *ngFor="let s of training.sessions" class="list-group">
+        <a class="list-group-item" routerLink="/session/+{{s.id}}">
+          {{s.date}}
+        </a>
+      </div>
+      <div  *ngFor="let c of newSessions" >
+        <div>
+          <input class="form-control" type="date" [(ngModel)]="c.date">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

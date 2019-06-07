@@ -1,0 +1,52 @@
+{
+  "training": {
+    "id": 1,
+    "reference": "JAVA_1",
+    "name": "JAVA",
+    "description": "JAVA TRAINING FOR BEGINNERS",
+    "prerequisites": "PROGRAMMING SKILLS; OO",
+    "period": 2,
+    "sessions": [
+      {
+        "id": 1,
+        "training": {
+          "id": 1,
+          "reference": "JAVA_1",
+          "name": "JAVA",
+          "description": "JAVA TRAINING FOR BEGINNERS",
+          "prerequisites": "PROGRAMMING SKILLS; OO",
+          "period": 2
+        },
+        "date": "2018-12-31",
+        "heroes": []
+      },
+      {
+        "id": 2,
+        "training": {
+          "id": 1,
+          "reference": "JAVA_1",
+          "name": "JAVA",
+          "description": "JAVA TRAINING FOR BEGINNERS",
+          "prerequisites": "PROGRAMMING SKILLS; OO",
+          "period": 2
+        },
+        "date": "2018-12-31",
+        "heroes": []
+      },
+      {
+        "id": 3,
+        "training": {
+          "id": 1,
+          "reference": "JAVA_1",
+          "name": "JAVA",
+          "description": "JAVA TRAINING FOR BEGINNERS",
+          "prerequisites": "PROGRAMMING SKILLS; OO",
+          "period": 2
+        },
+        "date": "2018-12-31",
+        "heroes": []
+      }
+    ]
+  }
+}
+

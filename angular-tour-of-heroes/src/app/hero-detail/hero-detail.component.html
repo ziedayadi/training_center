@@ -1,0 +1,59 @@
+<div *ngIf="hero" class="container">
+  <div class="one">
+    <h2>{{hero.name}} {{hero.lastName | uppercase}} </h2>
+    <div>
+        <form #f="ngForm" (ngSubmit)="f.form.valid" name="form" novalidate>
+          <div class="form-group">
+            <label>Name</label>
+            <input disabled="{{!isEditing}}" [(ngModel)]="hero.name" class="form-control" id="name" name="name" required="true" type="text">
+          </div>
+          <div class="form-group">
+            <label>Last name</label>
+            <input disabled="{{!isEditing}}" [(ngModel)]="hero.lastName" class="form-control" name="lastname" required type="text">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input disabled="{{!isEditing}}" [(ngModel)]="hero.email" class="form-control" name="email" required type="text">
+          </div>
+          <div class="form-group">
+            <label>Phone number</label>
+            <input disabled="{{!isEditing}}" [(ngModel)]="hero.phoneNumber" class="form-control" name="phone" required type="text">
+          </div>
+          <div class="form-group">
+            <label>Profession</label>
+            <input disabled="{{!isEditing}}" [(ngModel)]="hero.profession" class="form-control" minlength="5" name="prof" required type="text">
+          </div>
+          <div class="form-group">
+            <label>Sex</label>
+           <div>
+              {{hero.sex}}
+           </div>
+          </div>
+          <div class="form-group">
+            <label>Birth date</label>
+            <input disabled="{{!isEditing}}" [(ngModel)]="hero.birthDate" class="form-control" name="bd" required type="date">
+          </div>
+          <div class="form-group">
+            <label>Birth country</label>
+            <select disabled="{{!isEditing}}" [(ngModel)]="hero.country" class="form-control" name="bc" required>
+              <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Adress</label>
+            <input disabled="{{!isEditing}}" [(ngModel)]="hero.address" class="form-control" name="address" required type="text">
+          </div>
+          <button class="btn btn-primary margin" (click)="onEdit()">Edit</button>
+          <button class="btn btn-primary margin" (click)="save()">Save</button>
+          <button class="btn btn-primary margin" (click)="goBack()">Go back</button>
+        </form>
+
+    </div>
+  </div>
+  <div class="tow container">
+    <img border="2px" class="herohoto" src="{{photo}}" width="300px">
+    <div class="form-group">
+    <input *ngIf="isEditing" (change)="onSelectFile($event)" accept="image/*" type="file">
+    </div>
+  </div>
+</div>

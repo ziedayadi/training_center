@@ -1,0 +1,38 @@
+.row.content {height: 450px}
+
+.heroesdiv{
+  text-align: left;
+  float: left;
+  width: 50%;
+}
+
+.container {
+  margin: 20px;
+}
+
+.right-margin{
+  margin-right: 3px;
+}
+
+.marg-but{
+  margin: 5px;
+}
+
+.sessiondetaildiv{
+  float: left;
+  margin-left: 40px;
+  width: 40%;
+
+}
+
+.list-group-item{
+  margin-top:2px;
+}
+
+.checkbox-inline{
+  float: right;
+}
+
+.float-right{
+  float: right;
+}

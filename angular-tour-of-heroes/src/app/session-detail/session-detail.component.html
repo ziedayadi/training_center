@@ -1,0 +1,85 @@
+<div class="container-fluid">
+  <div class="navbar">
+
+    <button (click)="OnBack()" class="btn btn-primary right-margin">Back</button>
+
+    <button class="btn btn-primary">Edit</button>
+
+  </div>
+  <div class="heroesdiv panel panel-primary">
+    <div class="panel-heading">
+      <div class="panel-title"><h3>Heroes</h3></div>
+      <div>
+        <button (click)="onAdd()" class="btn btn-default float-right">Add</button>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div *ngFor="let hero of heroes">
+        <div class="form-group">
+          <div class="list-group-item">{{hero.name }} {{hero.lastName | uppercase}}
+            <button class="glyphicon glyphicon-remove btn-danger float-right" (click)="onDelete(hero.id)"></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div *ngIf="selectableHeroes.length>0" class="panel-footer">
+      <div class="form-group">
+        <input class="form-control" name="search" placeholder="Search.." type="text">
+      </div>
+      <div *ngFor="let hero of selectableHeroes" class="form-group" class="list-group">
+        <div class="list-group-item">
+          {{hero.name + ' ' + hero.lastName}}
+          <input (change)="onSelectHero(hero)" class="checkbox checkbox-inline" type="checkbox">
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="onAddSelected()" class="btn btn-danger">Add Selected</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="session" class="sessiondetaildiv">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h3>Training</h3></div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label>Name</label>
+          <p class="text-primary">{{session.training.name}}</p>
+        </div>
+        <div class="form-group">
+          <label>Period</label>
+          <p class="text-primary">{{session.training.period}}</p>
+        </div>
+        <div class="form-group">
+          <label>Prerequisites</label>
+          <p class="text-primary">{{session.training.prerequisites}}</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h3>Session</h3></div>
+      <div class="panel-body">
+        <form>
+          <div class="form-group">
+            <label>Id</label>
+            <p class="text-primary">{{session.id}}</p>
+          </div>
+          <div class="form-group">
+            <label>Date</label>
+            <input [(ngModel)]="session.date" class="form-control mat-datepicker-content" id="sessiondate"
+                   name="sessiondate" type="date">
+          </div>
+          <div *ngIf="trainers" class="form-group">
+            <label>Trainer</label>
+            <select [(ngModel)]="session.trainer" class="mat-select form-control" id="trainerName" name="trainerName">
+              <option *ngFor="let t of trainers" [value]="t">{{t.name + ' ' + t.lastName | uppercase}}</option>
+            </select>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>

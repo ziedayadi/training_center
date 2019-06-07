@@ -1,0 +1,27 @@
+.container{
+  margin: 10px;
+}
+
+.left{
+  width: 50%;
+  float: left;
+  margin-right: 5%;
+}
+
+.right{
+  width: 40%;
+  float: right;
+}
+
+.training-detail-input{
+  width: 100%;
+}
+
+.detail-button{
+  margin: 10px;
+}
+
+.save-btn{
+  background-color: green;
+  margin: 10px;
+}

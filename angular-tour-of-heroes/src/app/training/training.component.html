@@ -1,0 +1,66 @@
+<div class="trainig-container">
+  <div>
+    <h2>Traing List</h2>
+    <div class="search-container">
+      <input class="form-control" type="text" placeholder="Search.." name="search" [(ngModel)]="keyWord" >
+    </div>
+    <table id="trainings" mdbTable>
+      <tr>
+        <th mbd>Name</th>
+        <th>Reference</th>
+        <th>Description</th>
+        <th>Prerequisites</th>
+        <th>Period</th>
+      </tr>
+      <tr (click)="onClick(t.id)" *ngFor="let t of getFileredList()" class="clickable">
+        <td>{{t.name}}</td>
+        <td>{{t.reference}}</td>
+        <td>{{t.description}}</td>
+        <td>{{t.prerequisites}}</td>
+        <td>{{t.period}}</td>
+      </tr>
+    </table>
+    <button  class="btn btn-primary new-train-button" (click)="onAdd()" >New</button>
+    <button *ngIf="newTraining" class="btn btn-primary new-train-button" (click)="onCancel()" >Cancel</button>
+  </div>
+  <div *ngIf="newTraining" class="new-train-form">
+    <h2>New Training</h2>
+    <form name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+      <label>Name:</label>
+      <div class="form-group">
+        <input id="name" name="name" class="form-control"
+               required minlength="4"
+               [(ngModel)]="newTraining.name" />
+      </div>
+      <div class="form-group">
+
+        <label>Reference:</label>
+        <div>
+          <input class="form-control" [(ngModel)]="newTraining.reference" name="ref" required="">
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label>Description:</label>
+        <div >
+          <input class="form-control" [(ngModel)]="newTraining.description" name="desc"  required="">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Prerequisites:</label>
+        <div>
+          <input class="form-control" [(ngModel)]="newTraining.prerequisites" name="preq">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Period:</label>
+        <div >
+          <input class="form-control" type="number" [(ngModel)]="newTraining.period" name="period" required="">
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" [disabled]="f.form.pristine || f.form.invalid" (click)="onSave()">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

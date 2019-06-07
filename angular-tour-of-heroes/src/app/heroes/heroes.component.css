@@ -1,0 +1,93 @@
+/* HeroesComponent's private CSS styles */
+
+
+button {
+  font-family: Arial;
+}
+
+button:hover {
+  background-color:#888888;
+}
+
+button.delete {
+
+  float: right;
+  background-color: red !important;
+  color: white;
+  width: 3em;
+  height: 100%;
+  padding: unset;
+}
+
+.right {
+  width: 50%;
+  float: right;
+}
+
+.left {
+  float: left;
+  width: 40%;
+}
+
+.container {
+  margin: 20px;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 70%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+.left-input {
+  width: 50%;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.save-but{
+  margin-top: 10px;
+}
+
+.hero-item{
+  margin-top: 10px;
+  background-color: #dddddd;
+  color: black;
+}
+
+a:hover {
+  color: #039be5;
+  background-color: #cfd8dc;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+
+
